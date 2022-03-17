@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "212627236396",
+    "project_id": "rough-work-02",
+    "storage_bucket": "rough-work-02.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:212627236396:android:3f388a6ab3c9c7f2441389",
+        "android_client_info": {
+          "package_name": "com.example.roughwork02"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "212627236396-f3jrjs7enb6c5rm20ri7916tnhbhgp14.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5Miy9bYaCXJaqX3gwfNq5nEKjZvqnYkI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "212627236396-f3jrjs7enb6c5rm20ri7916tnhbhgp14.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

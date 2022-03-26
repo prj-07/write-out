@@ -10,17 +10,17 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.example.roughwork02.databinding.ActivityIshqBinding;
+import com.example.roughwork02.databinding.ActivityUserBinding;
 
-public class ishq extends AppCompatActivity {
+public class UserActivity extends AppCompatActivity {
 
-    private ActivityIshqBinding binding;
+    private ActivityUserBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityIshqBinding.inflate(getLayoutInflater());
+        binding = ActivityUserBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
@@ -29,7 +29,7 @@ public class ishq extends AppCompatActivity {
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
                 .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_ishq);
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_user);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
     }

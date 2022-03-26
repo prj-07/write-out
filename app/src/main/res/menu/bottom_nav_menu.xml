@@ -9,11 +9,12 @@
     <item
         android:id="@+id/navigation_dashboard"
         android:icon="@drawable/ic_baseline_create_24"
-        android:title="My Articles" />
+        android:title="My articles" />
 
     <item
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/ic_baseline_favorite_24"
-        android:title=" Favourites" />
+        android:title="Favourites" />
+
 
 </menu>

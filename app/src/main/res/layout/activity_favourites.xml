@@ -4,29 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EEEEF3"
-    tools:context=".user">
-
-
+    tools:context=".Favourites">
     <TextView
-        android:id="@+id/textViewhome"
+        android:id="@+id/textViewfav"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="283dp"
         android:layout_marginTop="49dp"
-        android:text="Home page"
+        android:text="Favourites"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="0dp"
-        android:background="#3F51B5"
         app:itemTextColor="@color/white"
-        app:menu="@menu/bottom_nav_menu" />
-
+        android:id="@+id/favourites"
+        app:menu="@menu/bottom_nav_menu"
+        android:background="#3F51B5" />
 </RelativeLayout>

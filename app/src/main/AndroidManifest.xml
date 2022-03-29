@@ -12,12 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RoughWork02">
         <activity
-            android:name=".writing"
+            android:name=".Favourites"
             android:exported="false" />
         <activity
-            android:name=".UserActivity"
-            android:exported="false"
-            android:label="@string/title_activity_user" />
+            android:name=".MyArticles"
+            android:exported="false" />
+        <activity
+            android:name=".user"
+            android:exported="false" />
+        <activity
+            android:name=".writing"
+            android:exported="false" />
         <activity
             android:name=".ForgetPassword"
             android:exported="false" />

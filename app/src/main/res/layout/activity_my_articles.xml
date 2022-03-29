@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyArticles">
+    <TextView
+        android:id="@+id/textViewmyart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="283dp"
+        android:layout_marginTop="49dp"
+        android:text="My Articles"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/extended_fab"
+        android:layout_width="200dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="204dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="Select Category"
+
+        app:iconTint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:itemTextColor="@color/white"
+        android:id="@+id/myarticles"
+        app:menu="@menu/bottom_nav_menu"
+        android:background="#3F51B5" />
+
+    <EditText
+        android:id="@+id/specifycat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="87dp"
+        android:layout_marginTop="404dp"
+        android:layout_marginEnd="114dp"
+        android:ems="10"
+        android:hint="Specify if other category"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />27dp"
+    tools:layout_editor_absoluteY="61dp" />
+
+    <Button
+        android:id="@+id/startarticle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="130dp"
+
+        android:layout_marginTop="492dp"
+        android:layout_marginEnd="131dp"
+        android:text="START ARTICLE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</RelativeLayout>

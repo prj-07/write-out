@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     //private static final String SHARED_PREF_NAME ="mypref";
     //private static final String KEY_NAME = "name";
-
+    private String name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,10 +45,16 @@ public class MainActivity extends AppCompatActivity {
         btnnavigate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this,UserActivity.class));
+                startActivity(new Intent(MainActivity.this,user.class));
                 String name = mname.getText().toString();
+                if (name.length()==0)
+                {
+                    mname.setError("YOU MUST ENTER YOUR NAME");
+                }
                 mEditor.putString(name,"");
                 mEditor.commit();
+                sendData();
+
             }
         });
         btnlogout.setOnClickListener(view -> {
@@ -56,6 +62,13 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(MainActivity.this,loginActivity.class));
         });
     }
+    public void sendData(){
+        name = mname.getText().toString().trim();
+        Intent i = new Intent(MainActivity.this,writing.class);
+        i.putExtra(writing.NAME,name);
+        startActivity(i);
+}
+
 
     @Override
     protected void onStart() {

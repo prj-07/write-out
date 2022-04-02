@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void sendData(){
         name = mname.getText().toString().trim();
-        Intent i = new Intent(MainActivity.this,writing.class);
+        Intent i = new Intent(MainActivity.this,user.class);
         i.putExtra(writing.NAME,name);
         startActivity(i);
 }

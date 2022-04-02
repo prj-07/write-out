@@ -7,6 +7,9 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
 import android.widget.Button;
@@ -22,6 +25,8 @@ public class writing extends AppCompatActivity {
 private TextView txtname;
 private TextView txtdate;
 private TextView txtcategory;
+private Calendar calendar;
+private SimpleDateFormat simpleDateFormat;
 
 private Button post;
 private EditText editText;
@@ -56,13 +61,11 @@ DatabaseReference reference;
         txtcategory.setText(getCategory);
 
 
-       class Calendar1 {
-            public  void main(String args[])
-            {
-                Calendar c = Calendar.getInstance();
-                 txtdate.setText(c.getTime().toString());
-            }
-        }
+       //calendar class
+        calendar = Calendar.getInstance();
+        String currentdate = DateFormat.getDateInstance().format(calendar.getTime());
+        txtdate.setText(currentdate);
+
 
 
         post.setOnClickListener(new View.OnClickListener() {

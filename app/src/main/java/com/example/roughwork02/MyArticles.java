@@ -12,12 +12,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MyArticles extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     TextView textView;
     Button btnstart;
     EditText categoryspec;
+    FloatingActionButton addnew;
     private String category;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,15 +29,12 @@ public class MyArticles extends AppCompatActivity {
 
         textView = (TextView) findViewById(R.id.textViewmyart);
         btnstart = (Button) findViewById(R.id.startarticle);
+        addnew = findViewById(R.id.extended_fab);
         bottomNavigationView.setSelectedItemId(R.id.myarticles);
-        btnstart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MyArticles.this, writing.class));
-                sendData();
-            }
-        });
 
+        addnew.setOnClickListener(view -> {
+            startActivity(new Intent(MyArticles.this,select_category.class));
+        });
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -60,10 +59,5 @@ public class MyArticles extends AppCompatActivity {
 
 
     }
-    public void sendData(){
-        category = categoryspec.getText().toString().trim();
-        Intent i = new Intent(MyArticles.this,writing.class);
-        i.putExtra(writing.CATEGORY,category);
-        startActivity(i);
-    }
+
 }

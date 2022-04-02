@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RoughWork02">
         <activity
+            android:name=".select_category"
+            android:exported="false" />
+        <activity
             android:name=".Favourites"
             android:exported="false" />
         <activity

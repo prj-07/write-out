@@ -4,7 +4,9 @@ package com.example.roughwork02;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import androidx.annotation.NonNull;
@@ -28,6 +30,7 @@ public class user extends AppCompatActivity {
     DatabaseReference database;
     MyAdapter myAdapter;
     ArrayList<userdata>list;
+    CheckBox check;
 
     @NonNull
     @Override
@@ -39,6 +42,10 @@ public class user extends AppCompatActivity {
         database = FirebaseDatabase.getInstance().getReference("Users");
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+      check = findViewById(R.id.checkBox);
+            check.setOnCheckedChangeListener((compoundButton, b) -> {
+            Toast.makeText(this, "Added to Favourites", Toast.LENGTH_SHORT).show();
+        });
 
         list = new ArrayList<>();
         myAdapter = new MyAdapter(this,list);
@@ -89,3 +96,23 @@ public class user extends AppCompatActivity {
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

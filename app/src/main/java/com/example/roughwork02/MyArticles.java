@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MyArticles extends AppCompatActivity {
@@ -19,7 +20,7 @@ public class MyArticles extends AppCompatActivity {
     TextView textView;
     Button btnstart;
     EditText categoryspec;
-    FloatingActionButton addnew;
+    ExtendedFloatingActionButton addnew;
     private String category;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

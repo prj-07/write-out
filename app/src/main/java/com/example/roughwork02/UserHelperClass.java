@@ -1,14 +1,16 @@
 package com.example.roughwork02;
 
 public class UserHelperClass {
-
+//this is a model class
     String name,Date,Category,Article;
 
-    public UserHelperClass() {
-//empty constructor
+    public UserHelperClass()
+    {
+    //empty_constructor
     }
 
-    public UserHelperClass(String name, String date, String category, String article) {
+    public UserHelperClass(String name, String date, String category, String article)
+    {
         this.name = name;
         this.Date = date;
         this.Category = category;

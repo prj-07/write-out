@@ -8,13 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class select_category extends AppCompatActivity {
     Button btnstart;
     EditText categoryspec;
     private String category;
-    FloatingActionButton selectcategory;
+    ExtendedFloatingActionButton selectcategory;
 
 
     @Override

@@ -42,14 +42,17 @@ public class user extends AppCompatActivity {
         database = FirebaseDatabase.getInstance().getReference("Users");
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-      check = findViewById(R.id.checkBox);
-            check.setOnCheckedChangeListener((compoundButton, b) -> {
-            Toast.makeText(this, "Added to Favourites", Toast.LENGTH_SHORT).show();
-        });
+        check = findViewById(R.id.checkBox);
+       //     check.setOnCheckedChangeListener((compoundButton, b) -> {
+         //   Toast.makeText(this, "Added to Favourites", Toast.LENGTH_SHORT).show();
+        //});
 
         list = new ArrayList<>();
         myAdapter = new MyAdapter(this,list);
         recyclerView.setAdapter(myAdapter);
+
+
+
         database.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

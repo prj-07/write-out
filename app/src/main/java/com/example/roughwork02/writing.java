@@ -36,6 +36,7 @@ private String name;
 private String getCategory;
 FirebaseDatabase rootnode;
 DatabaseReference reference;
+private SharedPreferences sharedPreferences ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +46,7 @@ DatabaseReference reference;
         txtcategory = (TextView) findViewById(R.id.textcategory);
         post = (Button) findViewById(R.id.buttonpost);
         editText = findViewById(R.id.editTextTextMultiLine);
+        sharedPreferences = getSharedPreferences("Write",MODE_PRIVATE);
       //  SharedPreferences mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
        // SharedPreferences.Editor editor = mPreferences.edit();
 
@@ -54,7 +56,7 @@ DatabaseReference reference;
         //txtname.setText(name);
         Intent i =getIntent();
         name = i.getStringExtra(NAME);
-        txtname.setText(name);
+        txtname.setText(sharedPreferences.getString("Name" , "hh"));
 
         Intent j = getIntent();
         getCategory =j.getStringExtra(CATEGORY);
@@ -81,7 +83,7 @@ DatabaseReference reference;
 
             UserHelperClass helperClass = new UserHelperClass(name,date,category,article);
 
-                reference.child(name).setValue(helperClass);
+                reference.child(article).setValue(helperClass);
                // reference.child(article).setValue(helperClass);
 
             }

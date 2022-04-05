@@ -1,7 +1,7 @@
 package com.example.roughwork02;
 
 public class userdata {
-    String name,category,article,date;
+    String name = "",category ="",article ="",date = "";
 
     public String getName() {
         return name;

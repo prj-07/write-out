@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         btnlogout = findViewById(R.id.btnlogout);
         btnnavigate = findViewById(R.id.btnnavigate);
         mname = findViewById(R.id.naam);
-        mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mPreferences = getSharedPreferences("Write" , MODE_PRIVATE) ;
         mEditor = mPreferences.edit();
 
 
@@ -64,8 +64,10 @@ public class MainActivity extends AppCompatActivity {
     }
     public void sendData(){
         name = mname.getText().toString().trim();
+        mEditor.putString("Name" , name);
+        mEditor.commit() ;
         Intent i = new Intent(MainActivity.this,user.class);
-        i.putExtra(writing.NAME,name);
+//        i.putExtra(writing.NAME,name);
         startActivity(i);
 }
 

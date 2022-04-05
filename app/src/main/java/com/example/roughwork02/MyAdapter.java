@@ -15,9 +15,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     Context context;
 
-    ArrayList<userdata>list;
+    ArrayList<UserHelperClass>list;
 
-    public MyAdapter(Context context, ArrayList<userdata> list) {
+    public MyAdapter(Context context, ArrayList<UserHelperClass> list) {
         this.context = context;
         this.list = list;
     }
@@ -31,10 +31,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-    userdata user = list.get(position);
+    UserHelperClass user = list.get(position);
 
     holder.name.setText(user.getName());
-    holder.article.setText(user.getArticle());
+    holder.article.setText(user.getTopic());
     holder.category.setText(user.getCategory());
     holder.date.setText(user.getDate());
 

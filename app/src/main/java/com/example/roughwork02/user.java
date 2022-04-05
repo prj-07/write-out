@@ -29,7 +29,7 @@ public class user extends AppCompatActivity {
     RecyclerView recyclerView;
     DatabaseReference database;
     MyAdapter myAdapter;
-    ArrayList<userdata>list;
+    ArrayList<UserHelperClass>list;
     CheckBox check;
 
     @NonNull
@@ -44,7 +44,7 @@ public class user extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         check = findViewById(R.id.checkBox);
        //     check.setOnCheckedChangeListener((compoundButton, b) -> {
-         //   Toast.makeText(this, "Added to Favourites", Toast.LENGTH_SHORT).show();
+        //   Toast.makeText(this, "Added to Favourites", Toast.LENGTH_SHORT).show();
         //});
 
         list = new ArrayList<>();
@@ -57,7 +57,7 @@ public class user extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
               for(DataSnapshot dataSnapshot: snapshot.getChildren()) {
-                 userdata user = dataSnapshot.getValue(userdata.class);
+                 UserHelperClass user = dataSnapshot.getValue(UserHelperClass.class);
                  list.add(user);
               }
               myAdapter.notifyDataSetChanged();

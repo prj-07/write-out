@@ -2,6 +2,7 @@ package com.example.roughwork02;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity {
 
     Button btnlogout;
+    ProgressDialog progressDialog;
     Button btnnavigate;
     EditText mname;
     FirebaseAuth mAuth;
@@ -54,7 +56,28 @@ public class MainActivity extends AppCompatActivity {
                 mEditor.putString(name,"");
                 mEditor.commit();
                 sendData();
-
+                progressDialog = new ProgressDialog(MainActivity.this);
+                progressDialog.show();
+                progressDialog.setContentView(R.layout.progress_dialog);
+                progressDialog.getWindow().setBackgroundDrawableResource(
+                        android.R.color.transparent
+                );
+                Thread timer = new Thread(){
+                    @Override
+                    public void run() {
+                        try {
+                            sleep(3500);
+                            Intent intent = new Intent(getApplicationContext(), user.class);
+                            startActivity(intent);
+                            progressDialog.dismiss();
+                            finish();
+                            super.run();
+                    }catch (InterruptedException e){
+                            e.printStackTrace();
+                        }
+                    }
+                };
+                timer.start();
             }
         });
         btnlogout.setOnClickListener(view -> {

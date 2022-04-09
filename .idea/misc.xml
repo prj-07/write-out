@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/PRATYUSH/AndroidStudioProjects/roughwork02/app/src/main/res/drawable/bg_round.xml" value="0.207" />
         <entry key="..\:/Users/PRATYUSH/AndroidStudioProjects/roughwork02/app/src/main/res/drawable/ic_heart_filled.xml" value="0.228" />
         <entry key="..\:/Users/PRATYUSH/AndroidStudioProjects/roughwork02/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.228" />
         <entry key="..\:/Users/PRATYUSH/AndroidStudioProjects/roughwork02/app/src/main/res/drawable/selector_wishlist_item.xml" value="0.207" />
@@ -29,6 +30,7 @@
         <entry key="..\:/Users/PRATYUSH/AndroidStudioProjects/roughwork02/app/src/main/res/layout/fragment_notifications.xml" value="0.25" />
         <entry key="..\:/Users/PRATYUSH/AndroidStudioProjects/roughwork02/app/src/main/res/layout/item.xml" value="0.25" />
         <entry key="..\:/Users/PRATYUSH/AndroidStudioProjects/roughwork02/app/src/main/res/layout/list_item.xml" value="0.25" />
+        <entry key="..\:/Users/PRATYUSH/AndroidStudioProjects/roughwork02/app/src/main/res/layout/progress_dialog.xml" value="0.25" />
         <entry key="..\:/Users/PRATYUSH/AndroidStudioProjects/roughwork02/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20625" />
         <entry key="..\:/Users/PRATYUSH/AndroidStudioProjects/roughwork02/app/src/main/res/menu/search_menu.xml" value="0.25" />
       </map>

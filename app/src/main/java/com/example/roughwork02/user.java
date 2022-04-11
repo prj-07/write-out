@@ -29,10 +29,12 @@ public class user extends AppCompatActivity implements ReccylerViewInterface{
     BottomNavigationView bottomNavigationView;
     TextView textView;
     RecyclerView recyclerView;
-    DatabaseReference database;
+    DatabaseReference database ,fvrtref,fvrt_list;
+    DatabaseReference databaseReference;
     MyAdapter myAdapter;
     ArrayList<UserHelperClass>list;
     CheckBox check;
+
 
     @NonNull
     @Override
@@ -42,6 +44,8 @@ public class user extends AppCompatActivity implements ReccylerViewInterface{
 
         recyclerView = findViewById(R.id.userlist);
         database = FirebaseDatabase.getInstance().getReference("Users");
+
+
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         check = findViewById(R.id.checkBox);

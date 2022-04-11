@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
@@ -21,12 +22,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
 
     ArrayList<UserHelperClass>list;
     List<String>listall;
-//    private ReccylerViewInterface reccylerViewInterface;
+   private ReccylerViewInterface reccylerViewInterface;
 
     public MyAdapter(Context context, ArrayList<UserHelperClass> list, ReccylerViewInterface reccylerViewInterface) {
         this.context = context;
         this.list = list;
-  //      this.reccylerViewInterface  = reccylerViewInterface;
+        this.reccylerViewInterface  = reccylerViewInterface;
 
     }
 
@@ -89,7 +90,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView name,category,article,date;
-
+        CheckBox checkBox;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -98,6 +99,19 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
             article = itemView.findViewById(R.id.tvarticle);
             category = itemView.findViewById(R.id.tvcategory);
             date = itemView.findViewById(R.id.tvdate);
+            checkBox =itemView.findViewById(R.id.checkBox);
+
+            checkBox.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (checkBox.isChecked())
+                    {
+                     getAdapterPosition();
+                    }
+
+
+                }
+            });
 
 
         }

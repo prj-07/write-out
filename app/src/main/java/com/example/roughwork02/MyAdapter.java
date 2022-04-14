@@ -12,6 +12,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -19,15 +22,16 @@ import java.util.List;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> implements Filterable {
 
     Context context;
-
+    CheckBox check;
     ArrayList<UserHelperClass>list;
     List<String>listall;
    private ReccylerViewInterface reccylerViewInterface;
 
-    public MyAdapter(Context context, ArrayList<UserHelperClass> list, ReccylerViewInterface reccylerViewInterface) {
+
+    public MyAdapter(Context context, ArrayList<UserHelperClass> list) {
         this.context = context;
         this.list = list;
-        this.reccylerViewInterface  = reccylerViewInterface;
+       this.reccylerViewInterface  = reccylerViewInterface;
 
     }
 
@@ -42,10 +46,27 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
     UserHelperClass user = list.get(position);
 
-    holder.name.setText(user.getName());
+
+      //  FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+       // String currentuser = user.getUid();
+       // final String postkey = getRef()
+
+
+
+        holder.name.setText(user.getName());
     holder.article.setText(user.getTopic());
     holder.category.setText(user.getCategory());
     holder.date.setText(user.getDate());
+
+    check.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            if (check.isChecked()){
+
+            }
+        }
+    });
+
 
     }
 
@@ -101,18 +122,20 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
             date = itemView.findViewById(R.id.tvdate);
             checkBox =itemView.findViewById(R.id.checkBox);
 
-            checkBox.setOnClickListener(new View.OnClickListener() {
+          /*  checkBox.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     if (checkBox.isChecked())
                     {
-                     getAdapterPosition();
+
                     }
 
 
                 }
-            });
 
+
+            });
+*/
 
         }
     }

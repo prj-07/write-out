@@ -17,6 +17,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,8 +31,8 @@ public class user extends AppCompatActivity implements ReccylerViewInterface{
     BottomNavigationView bottomNavigationView;
     TextView textView;
     RecyclerView recyclerView;
-    DatabaseReference database ,fvrtref,fvrt_list;
-    DatabaseReference databaseReference;
+    DatabaseReference database ;
+    DatabaseReference databaseReference,fvrtref,fvrt_list;
     MyAdapter myAdapter;
     ArrayList<UserHelperClass>list;
     CheckBox check;
@@ -41,9 +43,14 @@ public class user extends AppCompatActivity implements ReccylerViewInterface{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String currentuser = user.getUid();
 
         recyclerView = findViewById(R.id.userlist);
         database = FirebaseDatabase.getInstance().getReference("Users");
+
+        fvrtref = FirebaseDatabase.getInstance().getReference("favourites");
+        fvrt_list = FirebaseDatabase.getInstance().getReference("favoriteList").child(currentuser);
 
 
         recyclerView.setHasFixedSize(true);
@@ -54,7 +61,7 @@ public class user extends AppCompatActivity implements ReccylerViewInterface{
         //});
 
         list = new ArrayList<>();
-        myAdapter = new MyAdapter(this,list,this);
+        myAdapter = new MyAdapter(this,list);
         recyclerView.setAdapter(myAdapter);
 
 
